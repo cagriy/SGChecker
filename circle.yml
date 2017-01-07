@@ -1,0 +1,10 @@
+machine:
+  services:
+    - redis
+  environment:
+    REDIS_HOST: localhost
+dependencies:
+  pre:
+    - pip install flask
+    - pip install jsonpickle
+    - pip install redis

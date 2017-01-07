@@ -1,0 +1,14 @@
+virtualenv:
+  system_site_packages: true
+sudo: required
+services:
+  - docker
+language: python
+python:
+  - "2.7"
+install:
+  - pip install --user -r requirements.txt
+  - docker run -d -p 127.0.0.1:6379:6379 redis
+env:
+  - REDIS_HOST=localhost
+script: nosetests
